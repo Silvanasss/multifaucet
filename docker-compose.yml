@@ -2,7 +2,7 @@ version: '3.8'
 
 services:
   db:
-    image: mariadb:10.3
+    image: mariadb:10.9
     restart: always
     environment:
       - MYSQL_ROOT_PASSWORD=multifaucet
@@ -20,7 +20,7 @@ services:
       - .env
     volumes:
       - ./config/faucet:/var/www/html/config:ro
-      - ./config/php:/usr/local/etc/php:ro
+      - ./config/php/php.ini:/usr/local/etc/php/conf.d/php.ini:ro
     ports:
       - 80:80
 
