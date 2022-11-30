@@ -2,18 +2,19 @@
 						<input class="standard_text" id="cryptocoin_address" name="cryptocoin_address" type="text" value="" placeholder="<?php print translate('enter_address'); ?>" />
 						<?php if(get_setting('use_captcha')) { ?>
 						<div id="captcha" class="<?php print get_setting('captcha'); ?>">
-							<?php print($captcha); ?>
+							<?php print_r($captcha); ?>
 						</div>
 						<?php } ?>
 						
 						<?php
-						if (get_setting('use_captcha') && get_setting('captcha') == "simple-captcha") // only show captcha field for simple-captcha (reCAPTCHA has an own captcha input field)
+						if (get_setting('use_captcha') && get_setting('captcha') == "recaptcha_v2") // only show captcha field for simple-captcha (reCAPTCHA has an own captcha input field)
 							{
 							?>
 							<input class="standard_text" id="simple_captcha_code" name="captcha_code" type="text" value="" placeholder="<?php print translate('enter_captcha'); ?>" />
 							<?php
 							}
 						?>
+
 						<?php
 						if (get_setting('use_promo_codes')) // show promo code field if promo codes are accepted
 							{

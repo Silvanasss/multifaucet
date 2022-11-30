@@ -45,6 +45,24 @@ function faucet_get_captcha($SETTINGS){
 			$captcha_config['recpatcha_public_key'] = $SETTINGS->config["captcha_config"]["recpatcha_public_key"];
 			return recaptcha_get_html($captcha_config["recpatcha_public_key"]);
 		}
+	    elseif($SETTINGS->get("captcha") == "recaptcha_v2") {
+			//Load re-captcha library
+		require_once './libraries/recaptcha-master/src/autoload.php';
+			$recaptcha = new \ReCaptcha\ReCaptcha($SETTINGS->config["captcha_config"]["recaptcha_v2_private_key"]);
+			//$resp = $recaptcha->setExpectedHostname('localhost')
+                //  ->setExpectedAction('homepage')
+                //  ->setScoreThreshold(0.5)
+                //  ->verify($gRecaptchaResponse, $remoteIp);
+    //        print_r($resp);
+			// $captcha_config['recaptcha_v2_public_key'] = $SETTINGS->config["captcha_config"]["recaptcha_v2_public_key"];
+			//return recaptcha_get_html($captcha_config["recaptcha_v2_public_key"]);
+
+			 // require_once('recaptchalib.php');
+			  $publickey = $SETTINGS->config["captcha_config"]["recaptcha_v2_public_key"]; // you got this from the signup page
+			  echo recaptcha_get_html($publickey);
+
+			return $recaptcha;
+		}
 	}
 	else{
 		return ''; //Emtpy

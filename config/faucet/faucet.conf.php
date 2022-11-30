@@ -17,7 +17,7 @@ $config = array(
         "use_captcha" => true, // require the user to enter a captcha
         "use_spammerslapper" => false, // Prevent The use of Proxies and check the IP against Blacklists
 
-        "captcha" => "simple-captcha", // which CAPTCHA to use, possible values are: "recaptcha", "solvemedia", and "simple-captcha".
+        "captcha" => "recaptcha_v2", // which CAPTCHA to use, possible values are: "recaptcha", "solvemedia", and "simple-captcha".
 
         "captcha_config" => array(
                 //Simple Captcha Session Name
@@ -29,6 +29,9 @@ $config = array(
                 "solvemedia_private_key" => "PRIVATE_KEY_HERE",
                 "solvemedia_challenge_key" => "CHALLENGE_KEY_HERE",
                 "solvemedia_hash_key" => "HASH_KEY_HERE",
+                // if you're using reCAPTCHA-v2, enter your private and public keys here:
+                "recaptcha_v2_private_key" => "6LfNa_AiAAAAAOS29nyifPG1gFvsIt1fBEdHx0Jk",
+                "recaptcha_v2_public_key" => "6LfNa_AiAAAAAIqXvUH8oMKzUqD6bmRa0nMFxjuR",
         ),
 
         "spammerslapper_key" => "", // SpammerSlapper API key.

@@ -9,7 +9,7 @@
 </head>
 <body>
 	<div id="wrapper">
-		<h1><?php print($title); ?></h1>
+		<h1><?php print($title); ?> Testing</h1>
 		<div class="container">
 			<?php print($content); ?>
 		</div>
@@ -24,6 +24,7 @@
 			<a href="http://cur.lv/99zcp" title="<?php echo APPLICATION_WEBSITE; ?>" target="_blank">
 				<?php echo APPLICATION_NAME . ' ' . APPLICATION_VERSION; ?>
 			</a>
+			Is that a Captcha? 
 		</div>
 		<?php if(isset($stats)) { ?>
 		<div id="stats">

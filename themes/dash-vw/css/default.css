@@ -12,7 +12,7 @@ html,body{
 body{
 	background-image: url(../images/1471045076.jpg);
 	background-repeat: no-repeat;
-	background-size: 125% auto;
+	background-size: cover;
 
 	font-size: 62.5%;
 	font-family: 'Verdana','Arial',sans-serif;
